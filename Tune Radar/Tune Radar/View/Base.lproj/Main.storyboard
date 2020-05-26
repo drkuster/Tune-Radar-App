@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Finder View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FinderViewController" customModule="Tune_Radar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lush" translatesAutoresizingMaskIntoConstraints="NO" id="yRj-Ts-d4H">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXY-DQ-5fo">
+                                <rect key="frame" x="57" y="627" width="300" height="90"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="cNF-A6-NqF"/>
+                                    <constraint firstAttribute="width" constant="300" id="ewW-5H-rd4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
+                                <state key="normal" title="View Top Tracks">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewTopTracksButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1mR-ub-82h"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tune Radar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcP-v8-3il">
+                                <rect key="frame" x="20" y="129" width="286" height="352"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="95"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="IXY-DQ-5fo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Wo-gK-DOb"/>
+                            <constraint firstItem="yRj-Ts-d4H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4KL-8z-3L8"/>
+                            <constraint firstItem="IXY-DQ-5fo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="8p1-tG-YPH"/>
+                            <constraint firstAttribute="bottom" secondItem="yRj-Ts-d4H" secondAttribute="bottom" id="G7u-g6-bNB"/>
+                            <constraint firstItem="yRj-Ts-d4H" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dc7-gk-vCr"/>
+                            <constraint firstItem="yRj-Ts-d4H" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="guE-jR-hhz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="topTracksButton" destination="IXY-DQ-5fo" id="cZ4-c8-0hn"/>
+                        <segue destination="3iB-A6-h6c" kind="presentation" identifier="goToResults" modalPresentationStyle="fullScreen" id="PE8-Sp-X3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="jrv-ti-VgZ">
+            <objects>
+                <tableViewController id="3iB-A6-h6c" customClass="ResultViewController" customModule="Tune_Radar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jex-uK-Uyn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="3iB-A6-h6c" id="eso-fl-JnI"/>
+                            <outlet property="delegate" destination="3iB-A6-h6c" id="F45-RJ-QQ8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptb-IH-VpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Lush" width="540" height="960"/>
+    </resources>
+</document>
